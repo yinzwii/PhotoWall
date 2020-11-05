@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>PhotoWall2</title>
+		<link rel="stylesheet" type="text/css" href="css/PhotoWall.css" />
+	</head>
+	<body>
+		
+		<div id = "app" class="box">
+			<template v-for="(item,index) in srcList">
+				<img class="photo" v-on:click="preView(index)" :src="item"></img>
+			</template>
+		</div>
+		
+		<script src="lib/vue.min.js"></script>
+		<script src="lib/zx-image-viewer.min.js"></script>
+		<script type="text/javascript">
+		
+			var app = new Vue({
+				el:'#app',
+				data:{
+					srcList: [
+					  'img/danji.jpg',
+					  'img/dianwei.jpg',
+					  'img/diaochan.jpg',
+					  'img/sunshangxiang.jpg',
+					  'img/sunwukong.jpg',
+					  'img/luban.jpg',
+					  'img/lanlinwang.jpg',
+					  'img/kai.jpg',
+					  'img/donghuang.jpg'
+					]
+				},methods:{
+					preView : function (index){
+						var ziv = new ZxImageViewer({},this.srcList);
+						ziv.view(index);
+					}
+				}
+			});
+		
+		</script>
+	</body>
+</html>

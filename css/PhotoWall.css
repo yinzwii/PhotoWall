@@ -1,0 +1,34 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url(../img/huohua-010.jpg) center;
+}
+.box{
+	width: 1300px;
+	margin: 0px auto;
+	margin-top: 100px;
+}
+.box .photo {
+	width: 300px;
+	height: 180px;
+	border: 5px solid azure;
+	box-shadow: -10px -10px 10px black;
+	transition: all 0.3s linear;
+}
+
+.photo:nth-child(odd) {
+	transform: rotate(20deg);
+}
+
+.photo:nth-child(even) {
+	transform: rotate(-20deg);
+}
+
+.photo:hover {
+	transform: scale(1.3);
+	position: relative;
+	z-index: 2;
+}
