@@ -9,7 +9,10 @@
 		
 		<div id = "app" class="box">
 			<template v-for="(item,index) in srcList">
-				<img class="photo" v-on:click="preView(index)" :src="item"></img>
+				<!-- <i class = "imgBorder" style="position: relative;"> -->
+					<img class="photo" v-on:click="preView(index,$event)" :src="item"></img>
+				<!-- </i> -->
+				
 			</template>
 		</div>
 		
@@ -30,12 +33,25 @@
 					  'img/lanlinwang.jpg',
 					  'img/kai.jpg',
 					  'img/donghuang.jpg'
-					]
+					],
+					imgNodes : [],
+					current:null
 				},methods:{
-					preView : function (index){
-						var ziv = new ZxImageViewer({},this.srcList);
-						ziv.view(index);
+					preView : function (index,event){
+
+						if(this.current && this.current == this.imgNodes[index] 
+						&& this.current.getAttribute('class')  === 'cphoto'){
+							this.current.setAttribute('class','photo');
+							return;
+						}
+						this.current = this.imgNodes[index];
+						this.current.setAttribute('class','cphoto');
+						// var ziv = new ZxImageViewer({},this.srcList);
+						// ziv.view(index);
 					}
+				},
+				created : function() {
+					this.imgNodes = document.getElementsByTagName('IMG');
 				}
 			});
 		
