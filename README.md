@@ -4,9 +4,9 @@
 
 #### 效果演示
 
-![](.\img\sp1.png)
+![](https://github.com/yinzwii/PhotoWall/blob/master/img/sp1.png)
 
-![](.\img\sp2.png)
+![](https://github.com/yinzwii/PhotoWall/blob/master/img/sp2.png)
 
 #### 完善
 
